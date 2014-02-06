@@ -97,6 +97,13 @@
 
   background-position: 0 -76px;
 
+  &.no-news {
+    height: 150px;
+    .news {
+      display: none;
+    }
+  }
+
   h3 {
     color: #ebf3ff;
     font-size: 28px;

@@ -1,4 +1,4 @@
-<div class="header horizontal-gradient">
+<div class="header horizontal-gradient{% if page.no_news %} no-news{% endif %}">
   <div class="container">
     <h3>{% if page.header_title %}{{ page.header_title }}{% else %}{{ page.title }}{% endif %}</h3>
     <h4>{% if page.header_sub_title %}{{ page.header_sub_title}}{% else %}How to get the most out of Ionic.{% endif %}</h4>

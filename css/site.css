@@ -5075,6 +5075,8 @@ h1 + h2 + p {
   font-weight: 300;
   font-size: 10px;
   opacity: 0.3; }
+.home .no-dev {
+  color: #fff; }
 .home .feature-img {
   height: 175px;
   background-image: url(/img/homepage/phones-weather-demo.png);
@@ -5588,6 +5590,16 @@ pre {
     margin-left: 80px; }
   .getting-started-row .highlight {
     background: #eee; }
+
+#contact #team-pic {
+  width: 100%;
+  display: block;
+  margin: auto;
+  border-radius: 2px; }
+#contact #brody-pic {
+  width: 100%; }
+#contact #contact-row {
+  margin-top: 100px; }
 
 #showcase #apps {
   margin-top: 40px; }
@@ -6147,6 +6159,10 @@ a {
   padding: 24px 0 0 0;
   height: 200px;
   background-position: 0 -76px; }
+  .header.no-news {
+    height: 150px; }
+    .header.no-news .news {
+      display: none; }
   .header h3 {
     color: #ebf3ff;
     font-size: 28px;
