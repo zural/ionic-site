@@ -1,0 +1,36 @@
+#getting-started {
+  padding: 40px 0px;
+
+  .row {
+    margin-bottom: 50px;
+  }
+
+  .num {
+    float: left;
+    width: 80px;
+  }
+  .desc {
+    margin-top: 16px;
+    margin-left: 80px;
+  }
+
+  .code {
+    margin-top: 53px;
+  }
+  .highlight {
+    background: #eee;
+  }
+}
+#getting-started-bottom {
+  margin-bottom: 40px;
+
+  i {
+    color: #666666;
+  }
+}
+
+#ionitron-image {
+  background: url('/img/getting-started/ionitron-avatar.png') no-repeat transparent;
+  width: 156px;
+  height: 156px;
+}

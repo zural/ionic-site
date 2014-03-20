@@ -5596,18 +5596,6 @@ pre {
   .docs-home-row a:hover {
     text-decoration: none; }
 
-.getting-started-row {
-  clear: both;
-  margin: 10px auto 100px auto;
-  max-width: 600px; }
-  .getting-started-row .num {
-    float: left;
-    width: 80px; }
-  .getting-started-row .desc {
-    margin-left: 80px; }
-  .getting-started-row .highlight {
-    background: #eee; }
-
 .docs-api .left-menu .menu-group {
   text-transform: capitalize;
   color: #666;
@@ -5696,6 +5684,31 @@ pre {
 @media (min-width: 992px) {
   .improve-docs {
     display: block; } }
+#getting-started {
+  padding: 40px 0px; }
+  #getting-started .row {
+    margin-bottom: 50px; }
+  #getting-started .num {
+    float: left;
+    width: 80px; }
+  #getting-started .desc {
+    margin-top: 16px;
+    margin-left: 80px; }
+  #getting-started .code {
+    margin-top: 53px; }
+  #getting-started .highlight {
+    background: #eee; }
+
+#getting-started-bottom {
+  margin-bottom: 40px; }
+  #getting-started-bottom i {
+    color: #666666; }
+
+#ionitron-image {
+  background: url("/img/getting-started/ionitron-avatar.png") no-repeat transparent;
+  width: 156px;
+  height: 156px; }
+
 #showcase #apps {
   margin-top: 40px; }
   #showcase #apps > .row {
@@ -6179,6 +6192,9 @@ a {
   transition-property: opacity, border-color; }
   a:hover, a:focus {
     opacity: 1; }
+
+.text-center {
+  text-align: center; }
 
 .content-container {
   padding-top: 40px; }
