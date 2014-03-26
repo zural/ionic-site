@@ -10,12 +10,12 @@
 }
 
 .navbar-default .navbar-nav > li > a {
+  margin: 0;
+  padding-right: 26px !important;
+  padding-left: 26px !important;
   border-top: 3px solid transparent;
   color: #abc0f5;
   opacity: 1;
-  padding-left: 26px !important;
-  padding-right: 26px !important;
-  margin: 0;
 
   &:hover {
     color: white;
@@ -64,8 +64,8 @@
   .nav-link:hover,
   .nav-link:focus {
     border-top: 3px solid #B5CAFF !important;
-    opacity: 1 !important;
     color: white !important;
+    opacity: 1 !important;
   }
   .docs-page.getting-started-page .docs-nav {
     border-color: transparent !important;
@@ -134,5 +134,13 @@
 
   .heading-tile {
     background-position: 0 -80px;
+  }
+}
+
+.search-bar {
+  float: right;
+
+  input {
+    width: 200px;
   }
 }
