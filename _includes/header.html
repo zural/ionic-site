@@ -6,6 +6,9 @@
   <div class="news">
     <div class="container">
       {% if page.news %}{{ page.news }}{% else %}{{ site.news }}{% endif %}
+      {% include search_bar.html %}
     </div>
   </div>
 </div>
+
+{% include search_results.html %}

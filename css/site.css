@@ -6354,6 +6354,57 @@ a {
   .search-bar input {
     width: 200px; }
 
+.search-results {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  display: none;
+  padding: 25px 0;
+  background: #eee;
+  min-height: 360px;
+  font-size: 12px;
+  box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2); }
+  .search-results h4 {
+    color: #4f8ef7;
+    text-transform: uppercase;
+    border-bottom: 2px solid #4f8ef7;
+    font-size: 13px;
+    padding-bottom: 4px;
+    margin-bottom: 8px; }
+  .search-results ul {
+    margin: 0 0 0 -10px;
+    padding: 0; }
+  .search-results li {
+    margin: 0 0 0 15px;
+    padding: 1px;
+    list-style-type: none;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 100%; }
+    .search-results li a {
+      color: #333; }
+      .search-results li a:hover {
+        color: #4f8ef7; }
+
+.search-section {
+  float: left;
+  margin-left: 40px; }
+
+.search-api {
+  width: 580px;
+  margin-left: 0; }
+  .search-api li {
+    width: 30%; }
+
+.search-css {
+  width: 240px; }
+
+.search-content {
+  width: 240px; }
+
 .news {
   font-family: "AvenirNextLTPro-Ultlt", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: bold;

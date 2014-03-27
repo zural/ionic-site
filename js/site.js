@@ -124,7 +124,10 @@ var ionicSite = (function(){
       $(window).scroll(docScroll);
 
       function scrollSpyChange(e) {
-        if(smoothScrollingTo || !docContent) return;
+        if(smoothScrollingTo || !docContent) {
+          window.history.replaceState && window.history.replaceState({}, smoothScrollingTo, smoothScrollingTo);
+          return;
+        }
 
         var id;
         if(e.target.children.length > 1) {
@@ -151,6 +154,7 @@ var ionicSite = (function(){
               activeSection.addClass("active");
             }
           }
+          window.history.replaceState && window.history.replaceState({}, id, id);
         }
       }
       fixedMenu.on('activate.bs.scrollspy', scrollSpyChange);
@@ -302,16 +306,15 @@ $(document).ready(function () {
       var query = $(this).val();
 
       if (!query || query.length < 2) {
-        searchResultsDiv.html('');
+        searchResultsDiv.hide();
         return;
       }
 
       var
       results = {
-        'api': {},
-        'css': {},
-        'guide': {},
-        'tutorial': {}
+        api: {},
+        css: {},
+        content: {}
       },
       queryResult,
       queryResultId,
@@ -329,62 +332,56 @@ $(document).ready(function () {
         } else if(queryData.l == 'docs_css') {
           results.css[ queryResult.ref ] = queryData;
           totalResults++;
-        } else if(queryData.l == 'docs_guide') {
-          results.guide[ queryResult.ref ] = queryData;
-          totalResults++;
-        } else if(queryData.l == 'tutorial') {
-          results.tutorial[ queryResult.ref ] = queryData;
+        } else {
+          results.content[ queryResult.ref ] = queryData;
           totalResults++;
         }
 
       }
 
-      showResults(results);
+      showResults(results, totalResults);
 
     }));
 
   }
 
-  var resultsTemplate = '<div class="search-api">\
-                          <h2>JavaScript</h2>\
-                          <ul id="results-api"></ul>\
-                        </div>\
-                        <div class="search-css">\
-                          <h2>CSS</h2>\
-                          <ul id="results-css"></ul>\
-                        </div>\
-                        <div class="search-guide">\
-                          <h2>Guide</h2>\
-                          <ul id="results-guide"></ul>\
-                        </div>\
-                        <div class="search-tutorial">\
-                          <h2>Tutorials</h2>\
-                          <ul id="results-tutorial"></ul>\
-                        </div>';
-
-  function showResults(resultsData) {
+  function showResults(resultsData, totalResults) {
     console.log(resultsData);
 
-    var resultsDiv = $(document.createElement('div'));
+    addResults('#results-api', resultsData.api, 42);
+    addResults('#results-css', resultsData.css, 14);
+    addResults('#results-content', resultsData.content, 14);
 
-    resultsDiv.html(resultsTemplate);
-
-    addResults(resultsDiv, '#results-api', resultsData.api);
-    addResults(resultsDiv, '#results-css', resultsData.css);
-    addResults(resultsDiv, '#results-guide', resultsData.guide);
-    addResults(resultsDiv, '#results-tutorial', resultsData.tutorial);
-
-    searchResultsDiv.html( resultsDiv.contents() );
+    if(totalResults) {
+      searchResultsDiv.removeClass('no-results');
+      searchResultsDiv.addClass('has-results');
+    } else {
+      searchResultsDiv.removeClass('has-results');
+      searchResultsDiv.addClass('no-results');
+    }
+    searchResultsDiv.show();
   }
 
-  function addResults(resultsDiv, sectionId, data) {
+  function addResults(sectionId, data, limit) {
     var links = '';
+    var section = searchResultsDiv.find(sectionId);
+    var total = 0;
 
     for(var i in data) {
-      links += '<li><a href="' + data[i].p + '">' + data[i].t + '</a></li>'
+      links += '<li><a href="' + data[i].p + '">' + data[i].t + '</a></li>';
+      total++;
+      if(total >= limit) break;
     }
 
-    resultsDiv.find(sectionId).html(links);
+    section.html(links);
+
+    if(total) {
+      section.removeClass('no-section-results');
+      section.addClass('has-section-results');
+    } else {
+      section.removeClass('has-section-results');
+      section.addClass('no-section-results');
+    }
   }
 
 });
