@@ -5026,11 +5026,11 @@ h1 + h2 + p {
   .home .primary-row h2 {
     margin: 5px 0 0 0;
     color: #A8C7FF;
-    font-size: 16px;
-    line-height: 28px;
+    letter-spacing: -1px;
     font-weight: bold;
+    font-size: 16px;
     font-family: "AvenirNextLTPro-Ultlt", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    letter-spacing: -1px; }
+    line-height: 28px; }
   .home .primary-row .desktop-btn {
     display: none; }
 .home .btn-row {
@@ -5122,17 +5122,17 @@ h1 + h2 + p {
       .home .primary-row .demo-link {
         display: block; }
     .home .feature-img {
-      background-size: 420px 393px;
-      min-height: 405px; } }
+      min-height: 405px;
+      background-size: 420px 393px; } }
 @media (min-width: 992px) {
   .home {
     /* Desktop */ }
     .home .primary-row h1 {
       margin: 100px 0 0 0;
-      font-size: 48px;
-      font-family: "AvenirNextLTPro-UltLt", "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
+      letter-spacing: -1px;
       font-weight: bold;
-      letter-spacing: -1px; }
+      font-size: 48px;
+      font-family: "AvenirNextLTPro-UltLt", "HelveticaNeue-Light", Helvetica, Arial, sans-serif; }
     .home .primary-row .btn-row {
       margin-top: 40px; }
     .home .primary-row .btn {
@@ -5140,12 +5140,12 @@ h1 + h2 + p {
     .home .primary-row .btn-get-started {
       margin-left: 20px; }
     .home .feature-img {
-      height: 510px;
       margin-top: 20px;
+      height: 510px;
       background-size: 520px 486px; } }
 .home .utility-bar {
-  margin-top: -1px;
   position: relative;
+  margin-top: -1px;
   padding: 17px;
   width: 100%;
   background: #2155aa;
@@ -5163,16 +5163,16 @@ h1 + h2 + p {
   .home .utility-bar input {
     border: 1px solid #7597d4;
     background: #7597d4;
-    font-size: 13px;
-    color: white;
     box-shadow: none;
+    color: white;
     font-weight: normal;
+    font-size: 13px;
     font-family: "AvenirNextLTPro-Regular", "Helvetica Neue", Helvetica, Arial, sans-serif; }
     .home .utility-bar input:focus {
-      -webkit-box-shadow: none;
-      box-shadow: none;
       border: 1px solid #84A6E2;
-      background: #84A6E2; }
+      background: #84A6E2;
+      -webkit-box-shadow: none;
+      box-shadow: none; }
     .home .utility-bar input::-webkit-input-placeholder {
       color: #bbceef; }
     .home .utility-bar input::-moz-placeholder {
@@ -5198,26 +5198,26 @@ h1 + h2 + p {
 @media (min-width: 992px) {
   .home .social-row {
     margin: 7px 0 0 0;
-    font-family: "AvenirNextLTPro-UltLt", "HelveticaNeue-Light", Helvetica, Arial, sans-serif;
+    letter-spacing: -1px;
     font-weight: bold;
-    letter-spacing: -1px; } }
+    font-family: "AvenirNextLTPro-UltLt", "HelveticaNeue-Light", Helvetica, Arial, sans-serif; } }
 .home .social-row li {
   display: inline-block;
-  height: 27px;
   margin-right: 22px;
+  height: 27px;
   font-size: 12px; }
   .home .social-row li i {
     padding-right: 2px; }
   @media (min-width: 568px) {
     .home .social-row li {
-      font-size: 14px;
-      margin-right: 34px; }
+      margin-right: 34px;
+      font-size: 14px; }
       .home .social-row li i {
         padding-right: 4px; } }
 .home .social-row a {
+  color: white;
   text-decoration: none;
-  opacity: .6;
-  color: white; }
+  opacity: .6; }
   .home .social-row a:hover {
     opacity: 1; }
 .home .desc-row {
@@ -5250,10 +5250,10 @@ h1 + h2 + p {
     font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; }
 @media (min-width: 768px) {
   .home .feature-row {
+    margin: 70px auto;
     min-height: 210px;
     background: no-repeat 18% 5px;
-    background-size: 247px 210px;
-    margin: 70px auto; }
+    background-size: 247px 210px; }
     .home .feature-row h4, .home .feature-row p {
       padding-right: 35px;
       padding-left: 55%;
@@ -5344,6 +5344,59 @@ h1 + h2 + p {
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
   animation-name: fadeInDown; }
+
+.quotes {
+  position: relative;
+  height: 380px; }
+  .quotes .quote-img {
+    position: absolute;
+    left: -10px; }
+  .quotes blockquote {
+    border: none; }
+    .quotes blockquote p {
+      position: absolute;
+      min-height: 150px;
+      color: #999;
+      text-align: center;
+      font-size: 24px;
+      font-family: Georgia, serif;
+      line-height: 34px;
+      opacity: 0;
+      -webkit-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+      -webkit-font-smoothing: antialiased;
+      font-weight: normal; }
+    .quotes blockquote.active p {
+      opacity: 1; }
+  .quotes .active footer {
+    border-bottom: 2px solid #4f8ef7;
+    opacity: 1; }
+  .quotes footer {
+    position: absolute;
+    top: 220px;
+    padding-top: 25px;
+    padding-left: 92px;
+    width: 265px;
+    height: 94px;
+    background-size: 88px 80px;
+    background-repeat: no-repeat;
+    font-size: 13px;
+    opacity: .4; }
+  .quotes cite {
+    color: #4f8ef7;
+    font-weight: 400;
+    font-size: 15px; }
+  .quotes .quote-2 footer {
+    left: 37%; }
+  .quotes .quote-3 footer {
+    right: 0; }
+
+.quote-content {
+  position: relative;
+  margin: 0 auto;
+  max-width: 960px;
+  padding-top: 70px;
+  border-top: 1px solid #f1f1f1; }
 
 @font-face {
   font-weight: normal;
